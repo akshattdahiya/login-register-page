@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles_test.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#RightToLeft").on("click", function() {
+        $("#slide").animate({
+          marginLeft: "0",
+        });
+        $(".top").animate({
+          marginLeft: "100%",
+        });
+      });
+      $("#LeftToRight").on("click", function() {
+        $("#slide").animate({
+          marginLeft: "50%",
+        });
+        $(".top").animate({
+          marginLeft: "0",
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="background">
+    <div class="background-Right"></div>
+    <div class="background-Left"></div>
+  </div>
+
+  <div id="slide">
+    <div class="top">
+      <div class="left">
+        <div class="content">
+          <h1>Hello!</h1>
+          <h3>Please register to continue....</h3>
+          <form method="post" onsubmit="return false;">
+            <div>
+              <input type="text" placeholder="Full Name" />
+              <br>
+              <input type="text" placeholder="Designation" />
+              <br>
+              <input type="text" placeholder="Team" />
+              <br>
+              <input type="text" placeholder="Email" />
+              <br />
+              <input type="password" placeholder="Password" />
+              <br>
+              <input type="password" placeholder="Confirm Password" />
+            </div>
+          </form>
+
+          <button id="LeftToRight" class="on-off">Login</button>
+          <button>Register</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="content">
+          <h2>Login</h2>
+          <form method="post" onsubmit="return false;">
+            <div>
+              <input type="text" placeholder="Email" />
+              <br />
+              <input type="password" placeholder="Password" />
+            </div>
+
+            <button id="RightToLeft" class="on-off">Register</button>
+            <button>Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
